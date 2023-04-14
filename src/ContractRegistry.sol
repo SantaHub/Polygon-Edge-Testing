@@ -10,6 +10,8 @@ contract ContractRegistry is Ownable {
 
     mapping(string => address) public registry;
     event Register(string contractName, address contractAddress);
+    event logAddress(string, address);
+    event logName(string, string);
 
 
     constructor(address _address) Ownable() {
@@ -24,14 +26,19 @@ contract ContractRegistry is Ownable {
         emit Register(_contractName, _contractAddress);
     }
 
-    function getAddress(string calldata _contractName) external view returns (address) {
+    function getAddress(string calldata _contractName) external returns (address) {
+        emit logName("Contract Name", _contractName);
+        emit logAddress("Contract Address", registry[_contractName]);
+
         if (registry[_contractName] == address(0)) {
             revert ContractAddressNotFound();
         }
         return registry[_contractName];
     }
 
-    function getAccessActionAddress() external view returns (address) {
+    function getAccessActionAddress() external returns (address) {
+        emit logAddress("Contract Address", registry["ACCESS_ACTION"]);
+
         if (registry["ACCESS_ACTION"] == address(0)) {
             revert ContractAddressNotFound();
         }
