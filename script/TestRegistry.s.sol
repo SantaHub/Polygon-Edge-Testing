@@ -9,7 +9,13 @@ contract TestRegistry is Script {
     event log(string, address);
     function setUp() public {}
 
+    function _logEnvVars() private {
+        emit log("CONTRACT_REGISTRY_ADDRESS", vm.envAddress("CONTRACT_REGISTRY_ADDRESS"));
+    }
+
     function run() public {
+        _logEnvVars();
+
         ContractRegistry contractRegistry = ContractRegistry(vm.envAddress("CONTRACT_REGISTRY_ADDRESS"));
         address accessAction;
 
