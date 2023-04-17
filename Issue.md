@@ -90,5 +90,8 @@ When ran using cast call
 user@macbook % cast call ${CONTRACT_REGISTRY_ADDRESS} "getAddress(string)(address)" ACCESS_ACTION
 
 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512
-``
+```
 
+### Error Codes
+
+0x2ecfa8ed : Contract address not found
