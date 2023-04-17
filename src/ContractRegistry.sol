@@ -13,6 +13,21 @@ contract ContractRegistry is Ownable {
     event logAddress(string, address);
     event logName(string, string);
 
+    string public name = "Sulphur";
+
+    function getStaticValue() public pure returns (string memory) {
+        return "A static value";
+    }
+
+    function setName(string calldata _newName) public {
+        emit logName("Name : ", name);
+        name = _newName;
+    }
+
+    function getName() public returns (string memory) {
+        emit logName("Name : ", name);
+        return name;
+    }
 
     constructor(address _address) Ownable() {
         transferOwnership(_address);
@@ -20,7 +35,7 @@ contract ContractRegistry is Ownable {
 
     function updateAddress(string calldata _contractName, address _contractAddress) public onlyOwner {
         if (bytes(_contractName).length == 0) revert BlankContractName();
-
+        setName(_contractName);
         if (_contractAddress == address(0)) revert ZeroAddress();
         registry[_contractName] = _contractAddress;
         emit Register(_contractName, _contractAddress);

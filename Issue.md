@@ -24,7 +24,7 @@ The Issue :
     Use the contract registry address from output above. 
     #### Note down the AccessAction Address to verify later
     ```bash
-    export CONTRACT_REGISTRY_ADDRESS=0x5FbDB2315678afecb367f032d93F642f64180aa3
+    export CONTRACT_REGISTRY_ADDRESS=0x0B306BF915C4d645ff596e518fAf3F9669b97016
     ```
 
 3. Test the contract registry :

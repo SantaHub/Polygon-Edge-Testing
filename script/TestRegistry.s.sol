@@ -7,6 +7,9 @@ import "../src/AccessAction.sol";
 
 contract TestRegistry is Script {
     event log(string, address);
+    event logName(string, string);
+    event logUint(string, uint256);
+
     function setUp() public {}
 
     function _logEnvVars() private {
@@ -18,6 +21,10 @@ contract TestRegistry is Script {
 
         ContractRegistry contractRegistry = ContractRegistry(vm.envAddress("CONTRACT_REGISTRY_ADDRESS"));
         address accessAction;
+
+        emit log("Contract Registry addr", address(contractRegistry));
+        emit logName("Get a constant value", contractRegistry.getStaticValue());
+        emit logName("Contract Registry Name", contractRegistry.getName());
 
         accessAction = contractRegistry.getAddress("ACCESS_ACTION");
         emit log("Access Action ", accessAction);
