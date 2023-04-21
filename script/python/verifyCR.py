@@ -2,8 +2,6 @@ from web3 import Web3
 from web3.contract import Contract
 
 import os
-from dotenv import load_dotenv
-load_dotenv()
 
 
 ETH_ACCOUNT_PRIVATE_KEY = os.environ.get("ETH_ACCOUNT_PRIVATE_KEY")

@@ -42,9 +42,8 @@ The Issue :
 5. Verify the contract registry using python:
 
     ```bash
-    export WEB3_PROVIDER_URI = 'http://localhost:10002'
-    export ETH_ACCOUNT_PRIVATE_KEY = '0x0'
-
+    export WEB3_PROVIDER_URI='http://localhost:10002'
+    export ETH_ACCOUNT_PRIVATE_KEY='0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80'
     python script/python/verifyCR.py
     ```
 
