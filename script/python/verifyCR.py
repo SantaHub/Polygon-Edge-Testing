@@ -7,14 +7,14 @@ load_dotenv()
 
 
 ETH_ACCOUNT_PRIVATE_KEY = os.environ.get("ETH_ACCOUNT_PRIVATE_KEY")
-ETH_RPC_URL="http://localhost:10002"
+WEB3_PROVIDER_URI=os.environ.get("WEB3_PROVIDER_URI")
 CONTRACT_REGISTRY_ADDRESS = os.environ.get("CONTRACT_REGISTRY_ADDRESS")
 ACCESS_ACTION_ADDRESS = os.environ.get("ACCESS_ACTION_ADDRESS")
 CONTRACT_REGISTRY_JSON_PATH = "out/ContractRegistry.sol/ContractRegistry.json"
 
 def get_web3() -> Web3:
     from web3.middleware import geth_poa_middleware
-    web3 = Web3(Web3.HTTPProvider(ETH_RPC_URL))
+    web3 = Web3(Web3.HTTPProvider(WEB3_PROVIDER_URI))
     web3.middleware_onion.inject(geth_poa_middleware, layer=0)
     return web3
 
