@@ -7,9 +7,6 @@ Use the documentation here: https://github.com/foundry-rs/foundry
 
 ## Install Polygons
 
-Using [doc](https://wiki.polygon.technology/docs/edge/get-started/set-up-ibft-locally). 
-In this configuration i deployed the polygon network in EC2
-
 - Install Polygon using Go
 ```
 go install github.com/0xPolygon/polygon-edge@develop
