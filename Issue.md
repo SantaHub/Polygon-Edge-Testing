@@ -12,7 +12,7 @@ The Issue :
 1. Deploy the sample contract : 
 
     ```bash
-    export FOUNDRY_PROFILE=local
+    export FOUNDRY_PROFILE=polygon
     export PRIVATE_KEY=0x0
     export ADDRESS=0x0
     forge script script/DeployAll.s.sol -vvvv --legacy --broadcast
