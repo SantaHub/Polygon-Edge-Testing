@@ -43,9 +43,10 @@ The Issue :
 
     ```bash
     python script/python/verifyCR.py
-  ```
+    ```
 
 ## Logs 
+
 ```
 user@macbook % forge script script/TestRegistry.s.sol  -vvvv
 [⠢] Compiling...
